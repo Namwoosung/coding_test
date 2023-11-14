@@ -131,6 +131,11 @@ course.reverse()
 print(course.count("C++"))
 
 
+#list로 만드는 map 함수(아래는 i의 각 자리수의 합을 구하는 예제)
+N = input()
+for i in range(1, N + 1):
+  tmp = sum(map(int,str(i))) #map으로 i의 각 자리수를 element로 하는 int형 list를 생성 -> sum함수로 합을 구함
+
 
 
 """
