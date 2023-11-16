@@ -141,3 +141,12 @@ int main()
 	in.close();
 }
 */
+
+
+/* 자료구조 특징 비교
+C++ 자료구조로 list, vector, stack, queue등 존재
+list는 double linked list형태, vector는 배열의 형태(동적 할당 가능한), stack과 queue는 사실상 배열일 듯?
+list는 중간에 삽입과 삭제가 많은 경우 사용하는 자료구조
+vector는 삽입과 삭제가 마지막과 끝에서만 주로 이루어지고, memory access가 많은 경우에 사용하는 자료구조
+메모리 관점에서 vector와 list중에 vector가 더 효율적이다
+*/
