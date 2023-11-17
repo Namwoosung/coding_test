@@ -127,7 +127,8 @@ course.append(["HTML5", "CSS3"])
 course.extend(["HTML", "Dart"]) #확장
 course.insert("Java", 2) #2번째 index에 삽입
 course.remove("Go")
-course.reverse()
+course.reverse() #이건 배열을 거꾸로 뒤집는 것
+course.sort(reverse = True) # 이게 내림차순 정렬
 print(course.count("C++"))
 
 
@@ -136,6 +137,10 @@ N = input()
 for i in range(1, N + 1):
   tmp = sum(map(int,str(i))) #map으로 i의 각 자리수를 element로 하는 int형 list를 생성 -> sum함수로 합을 구함
 
+
+
+#여러 개 input을 한 번에 받아 바로 int로 변환
+n, m = map(int, input().split())
 
 
 """
