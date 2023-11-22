@@ -1,0 +1,27 @@
+git add
+git commit
+git status
+git log
+
+git remote add origin https://
+(https://의 원격 github을 origin이라는 이름으로 연결하겠다. origin아니어도 상관없음)
+git branch -m main(이름 master를 main으로 변경)
+git push -u origin main
+(origin이라는 원격저장소의 main branch에 push 하겠다)
+
+git branch [name]
+git checkout [name]
+
+git reset
+(HEAD로 돌아가기)
+
+git stash
+(현재 변경사항 저장, add한 file과 tracking중인 file의 변경사항) <- add 안 한 file은 stash되지 않음
+git stash apply
+(stash[0]번에 있는변경사항 불러오기, 불러온다고 해서 해당 내용이 stash에서 지워지는 것은 아님)
+git stash list
+(지금까지 저장해 놓은 기록들, stash는 stack구조)
+git stash drop
+(가장 위 stash 삭제)
+git stash pop
+(apply + drop)
