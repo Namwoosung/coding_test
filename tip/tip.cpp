@@ -84,13 +84,110 @@ double Plus(double x, double y)
 	return x + y;
 }
 
-int maid()
+int main()
 {
 	float z = Plus(13.2, 12.5);
 	cout << z;
 }
 
-//call by value, reference, pointer 확실히 정리할 것!!!!!!
+
+//pointer 개념
+/*
+pointer는 주소 값을 가르키는 변수
+int *p = NULL;
+int num = 15;
+p = &num;
+과 같이 선언하면 p는 num이라는 변수의 주소를 저장하는 변수인 것, *p와 같이 접근하면 p라는 포인터변수가 저장한 메모리에 저장된 값에 접근
+
+int형 변수는 4byte 크기, double형 변수는 8byte 크기를 할당받듯이 pointer 변수도 할당받는 크기가 정해져있음 -> 32bit 시스템이면 4byte, 64bit 시스템이면 8byte
+
+pointer변수는 메모리 주소를 저장하는 변수인데, 그럼 왜 pointer 변수는 int *, double *와 같이 자료형에 따라 달라지는가?
+int는 해당 메모리부터 4byte, double은 해당 메모리부터 8byte를 읽어야되는 것과 같이 자료형 마다 점유하는 메모리크기가 다르기에 pointer변수도 자료형에 따라 읽어야되는 범위가 달라지기 떄문
+
+(*p)++ //이렇게 하면 p가 참조하는 값이 증가하는 것이 맞음
+*p++ //이렇게 하면 안됨, 참조 연산자는 후위증가 연산자보다 우선순위가 늦기에, p의 메모리값이 증가되고 이후에 참조됨 -> 그러면 쓰레기값이 출력될 것
+
+
+추가로 배열도 pointer변수다
+int arr[5] = {1, 2, 3, 4, 5};
+이렇게 선언하면 arr이라는 변수는 arr[0]이 저장된 메모리 주소를 가르킨다.
+arr++로 접근하면 arr은 int형 pointer변수이기에 arr[0]의 다음 4byte주소를 가르켜 arr[1]에 접근하는 것
+
+추가로 객체에 접근하는 방식은 해당 calss type변수에 .으로 접근하는 방식과 class type의 pointer 변수로 ->로 접근한느 방식이 있다.
+class Test{
+public:
+	int a;
+	int b;
+};
+
+int main(){
+	Test T;
+	Test* pT = &T;
+}
+위와 같이 선언되어 있으면 T.a, (&T)->a, pT->a, (*pT).a 모두 사용 가능한 접근 방식이다.
+
+*/
+
+
+
+
+//call by value, reference, pointer 개념
+//call by value 예제
+void Swap(int x, int y) {
+	int tmp = x;
+	x = y;
+	y = tmp;
+}
+
+int main() {
+	int a = 10;
+	int b = 10;
+
+	Swap(a, b);
+
+	cout << "a: " << a << endl;
+	cout << "b: " << b << endl;
+}
+/*
+Swpa을 해도 a와 b가 바뀌지 않는 이유
+먼저 a와 b가 선언되면 해당 값은 Stack에 쌓임, 이후 Swap이 호출 -> 그럼 Swap내 지역변수인 x와 y, tmp가 선언되고 해당 값들은 b아래에 쌓이게 됨
+-> 여기서 x와 y는 a와 b의 값을 복사해서 저장할 뿐, 서로 다른 메모리 영역에 할당되어 있음
+=> 즉 x와 y의 값을 변경하더라도 해당 메모리 영역에서의 변화가 존재할 뿐 a와 b의 값은 그대로
+*/
+
+//call by reference 예제 <- C에는 존재하지 않고, C++에 추가된 개념
+void Swap(int &x, int &y) {
+	int tmp = x;
+	x = y;
+	y = tmp;
+}
+
+/*
+call by reference는 별칭과 동일한 개념이다.
+int main(){
+	int a = 7;
+	int &b = a;
+}
+위와 같이 선언하면 b는 a와 동일한 메모리를 사용하고, 동일한 값을 저장한 말 그대로 별칭의 역할을 한다
+따라서 하나의 값만 바뀌어도 2개는 동일한 메모리를 사용하니 동일하게 변경된다.
+즉 call by reference는 파라미터로 받는 값이 새로 stack에 할당되는 것이 아니라 넘어온 값의 별칭으로 완전히 동일한 메모리 영역을 갖는다
+따라서 해당 함수 내에서의 변경이 main함수의 a와 b에도 영향을 주는 것
+*/
+
+//call by pointer 예제 <- 기존 C에서 call by reference와 동일한 방식
+void Swap(int* x, int* y) {
+	int tmp = *x;
+	*x = *y;
+	*y = tmp;
+}
+/*
+엄밀히말하면 call by value와 같이 파라미터로 넘어온 값을 복사해서 새로 stack에 저장하는 것은 동일
+그러나 여기서는 메모리 값을 받아서 해당 메모리 값을 갖는 pointer변수를 stack에 저장
+즉 main에서 a와 b의 주소를 파라미터로 넘기면 stack에 int *형 변수 x와 y가 아래에 새로 생기고 거기에 a와 b의 주소를 저장
+따라서 x와 y로 메모리를 역 참조해 해당 값을 변경하면, 실제 main에 있는 a와 b의 값이 변경되는 것
+*/
+
+
 
 
 //최소공배수랑 최대공약수 구하는 알고리즘 정리할 것!!
@@ -152,3 +249,33 @@ vector는 삽입과 삭제가 마지막과 끝에서만 주로 이루어지고, memory access가 많은 �
 */
 
 
+
+//default parameter
+//디폴트 값은 뒤에서부터 지정해줘야 함 -> 앞은 지정하고, 뒤는 지정하지 않는 것은 불가능
+int sum(int a, b = 10) {
+	return a + b;
+}
+
+int main(){
+	int a = 5;
+	cout << sum(a) << endl; //실제 파라미터를 넘길 때, 하나만 넘기면 b는 default값으로 지정됨
+
+	return 0;
+}
+
+
+
+//local과 global variable
+/*
+global과 local에 같은 이름의 변수가 존재하면 local이 먼저 탐색됨
+즉 좁은 구역부터 탐색해나가며 해당 변수를 찾고, access됨
+*/
+
+
+
+
+//재귀는 메모리관점에서 보통 비효율적, but 프로그래머가 이해하기는 더 용이할 수 있음
+
+
+
+//date_5까지 정리한 것
