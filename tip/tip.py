@@ -44,6 +44,9 @@ name.find('x')
 name.find('x', 2) #2번째 x의 index
 # 숫자일 경우 int(name), float(name)으로 형변환 가능
 
+#python에서 ASCII로 접근해 값을 증가시키는 방법
+test = chr(ord(test) + 1)
+
 
 
 
