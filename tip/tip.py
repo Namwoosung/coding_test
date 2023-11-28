@@ -147,6 +147,8 @@ n, m = map(int, input().split())
 #여러 개 input을 int형 list로 입력
 price = list(map(int, input().split()))
 
+#나중에 map함수의 사용에 대해 자세히 알아보기
+
 
 
 """
