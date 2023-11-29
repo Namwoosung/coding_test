@@ -278,4 +278,12 @@ global과 local에 같은 이름의 변수가 존재하면 local이 먼저 탐색됨
 
 
 
+//C++에서 sort방법 <- 나중에 vector 정렬과, 3번째 인자로 comapre 함수를 넘기는 방식도 함께 정리
+#icnlude <algorithm>
+
+int arr[10] = { 1, 2, 3, };
+sort(arr, arr + 10); //오름차순
+
+
+
 //date_5까지 정리한 것
