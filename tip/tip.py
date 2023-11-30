@@ -47,6 +47,11 @@ name.find('x', 2) #2번째 x의 index
 #python에서 ASCII로 접근해 값을 증가시키는 방법
 test = chr(ord(test) + 1)
 
+#python에서 string으로 반복문을 돌린다면 아래와 같이 하는 것이 효율적(stirng도 list와 유사하게 사용 가능)
+colors = "CBBCBCB"
+for color in colors:
+   color
+
 
 
 
