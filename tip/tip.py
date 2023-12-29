@@ -20,12 +20,11 @@ name = 'Issac'
 len(name)
 name[3:] #ac
 name[2:-1] #sa
-name.replace('ss', 'xx')
+name.replace('ss', 'xx', 1) #앞에서 부터 한 번만 교체
 name.count('xx')
 name.find('x')
 name.find('x', 2) #2번째 x의 index
 # 숫자일 경우 int(name), float(name)으로 형변환 가능
-
 #python에서 ASCII로 접근해 값을 증가시키는 방법
 test = chr(ord(test) + 1)
 
@@ -124,6 +123,11 @@ meets.sort(key=lambda x:x[0])
 N = input()
 for i in range(1, N + 1):
   tmp = sum(map(int,str(i))) #map으로 i의 각 자리수를 element로 하는 int형 list를 생성 -> sum함수로 합을 구함
+
+#"0101010", "1010101", ... 등의 문자열을 차례로 받아 행렬을 만드는 방법
+#A라는 list를 생성하고, input()을 먼저 각각 int형으로 mapping후 이를 list로 변환하고 각 행의 list를 A에 append
+A = []
+A.append(list(map(int, list(input()))))
 
 
 
