@@ -1,6 +1,3 @@
-#input data는 항상 string이다 -> 형변환 잊지 말것
-
-
 
 """알아두면 좋은 함수 및 코드"""
 "XXXX.XX".replace('XXXX', 'AAAA').replace('XX', 'AA') #replace함수
@@ -13,21 +10,6 @@ pow(x,y)
 round(x)
 help(abs)
 min(2, 3, max(5, 7), -1, 2)
-
-
-
-#사용자 정의함수에서 help를 사용할 수 있도록 하려면 FDR로 문장을 추가하면 됨
-def convert_to_celsius(fahrenheit):
-    """(int) -> int
-    
-    Return the celcius number from the given fahrenheit number.
-    
-    >>> convert_to_celsius(212)
-    100
-    """
-    return (fahrenheit - 32) * 5/9
-
-
 
 
 """
@@ -52,13 +34,6 @@ colors = "CBBCBCB"
 for color in colors:
    color
 
-
-
-
-#print함수 활용
-print(1, '2', "3", sep = " : ", end = " {endl}  \"")
-#sep는 value사이에 출력할 값으로 default는 공백 한 칸
-#end는 value를 모두 출력하고 출력할 값으로 default는 \n
 
 
 
@@ -138,6 +113,11 @@ course.remove("Go")
 course.reverse() #이건 배열을 거꾸로 뒤집는 것
 course.sort(reverse = True) # 이게 내림차순 정렬
 print(course.count("C++"))
+
+
+#2차원 배열에서 정렬, key 파라미터를 이용(보통 익명함수로 lambda를 사용)
+#아래는 meets의 첫번째 인자로 정렬
+meets.sort(key=lambda x:x[0])
 
 
 #list로 만드는 map 함수(아래는 i의 각 자리수의 합을 구하는 예제)
