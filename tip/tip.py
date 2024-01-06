@@ -1,6 +1,10 @@
+"""
+python input에서 sys module활용
+"""
+#코테에서 sys를 사용해 input을 받는 이유와 사용법 찾아서 notion에 정리할 것
 
-"""알아두면 좋은 함수 및 코드"""
-"XXXX.XX".replace('XXXX', 'AAAA').replace('XX', 'AA') #replace함수
+
+
 
 board[idx:idx+4:2] #인덱싱 접근방식 -> start부터 end-1까지 step만큼 띄어서 접근
 board[::-1] #이렇게하면 -1이 step이고 전체에 대해서이므로 전체 list를 뒤집게 됨
@@ -20,6 +24,7 @@ name = 'Issac'
 len(name)
 name[3:] #ac
 name[2:-1] #sa
+"XXXX.XX".replace('XXXX', 'AAAA').replace('XX', 'AA')
 name.replace('ss', 'xx', 1) #앞에서 부터 한 번만 교체
 name.count('xx')
 name.find('x')
