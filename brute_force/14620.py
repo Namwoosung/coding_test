@@ -1,3 +1,4 @@
+"""나중에 다시 풀기
 import sys
 input = sys.stdin.readline
 
@@ -9,7 +10,7 @@ for i in range(size):
 def calCost(row, col):
     return table[row][col] + table[row - 1][col] + table[row + 1][col] + table[row][col-1] + table[row][col+1]
 
-minCost = 600
+minCost = 3000
 for aRow in range(1, size - 1):
     for aCol in range(1, size - 1):
         nowCost = 0
@@ -44,9 +45,4 @@ for aRow in range(1, size - 1):
 
 
 print(minCost)
-                        
-
-
-
-
-        
+"""
