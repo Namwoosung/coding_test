@@ -1,5 +1,5 @@
-package org.example;
-
+// list보다 array가 성능상 더 효과적일 듯
+// 정렬보다 QuickSelect 알고리즘이 더 효과적 <- 이건 추후 더 공부 필요
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
