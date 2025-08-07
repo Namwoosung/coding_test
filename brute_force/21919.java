@@ -68,7 +68,7 @@ public class Main {
 
 
 /**
-//시간 복잡도는 같은데 더 깔끔한 코드, String 관련 처리는 StringBuilder를 사용
+//시간 복잡도는 같은데 더 깔끔한 코드, String 관련 처리는 StringBuilder를 사용!
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
